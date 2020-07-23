@@ -1,5 +1,7 @@
-import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { City } from '../interface/City';
+import { WeatherService } from '../weather.service';
+import { Weather } from '../interface/Weather';
 
 @Component({
 	selector: 'app-place',
@@ -8,11 +10,19 @@ import { City } from '../interface/City';
 })
 export class PlaceComponent implements OnInit {
 	@Input() city: City;
+	weather: Weather;
 
-	constructor() { }
+	constructor(
+		private weatherService: WeatherService,
+	) { }
 
 	ngOnInit(): void {
 		console.log(this.city);
+
+		this.weatherService.getFor(this.city.name).subscribe(result => {
+			this.weather = result;
+			console.log(this.weather);
+		})
 	}
 
 
