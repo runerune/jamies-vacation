@@ -1,9 +1,15 @@
 <section>
 	<h2>{{city.name}}</h2>
 
-	<span>Flights range from to EUR</span>
-	
-	<span>{{weather?.weather[0].main || '...'}}</span>
+	<p>{{weather?.weather[0].main || '...'}}</p>
+
+	<p>
+		Flights range from <span>{{(flights?.min | number:'1.0-0') || '...'}}€</span> 
+		to <span>{{(flights?.max  | number:'1.0-0') || '...'}}€</span>
+		with average cost of <span>{{(flights?.average  | number:'1.2-2') || '...'}}€</span>,
+		or <span>{{(flights?.unit*100  | number:'1.2-2') || '...'}} cents</span> per kilometer.
+	</p>
+
 	
 	<aside>
 		<ul>
