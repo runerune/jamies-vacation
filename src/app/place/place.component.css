@@ -2,3 +2,9 @@ li span {
 	font-weight: bold;
 	color: #0abf53;
 }
+
+li, ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
