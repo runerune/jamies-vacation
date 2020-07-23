@@ -1,38 +1,45 @@
-<section>
-	<h2>{{city.name}}</h2>
-
-	<p>{{weather?.weather[0].main || '...'}}</p>
-
-	<p>
-		Flights range from <span>{{(flights?.min | number:'1.0-0') || '...'}}€</span> 
-		to <span>{{(flights?.max  | number:'1.0-0') || '...'}}€</span>
-		with average cost of <span>{{(flights?.average  | number:'1.2-2') || '...'}}€</span>,
-		or <span>{{(flights?.unit*100  | number:'1.2-2') || '...'}} cents</span> per kilometer.
-	</p>
-
+<div class="card">
+	<article class="card-body">
+		<h2 class="card-title">
+			<span>{{city.name}}</span>
+			<img 
+				src="https://openweathermap.org/img/wn/{{weather?.weather[0].icon}}@2x.png"
+				alt=" - weather: {{weather?.weather[0].main || '...'}}"
+				title="{{weather?.weather[0].main || '...'}}"
+			>
+		</h2>
 	
-	<aside>
-		<ul>
-			<li>Temperatures are between 
-				<span>{{(weather?.main.temp_min | number:'1.0-1') || '...' }}&deg;C</span> 
-				and <span>{{(weather?.main.temp_max | number:'1.0-1') || '...' }}&deg;C</span>,
-				but on average, it feels like <span>{{(weather?.main.feels_like | number:'1.0-1') || '...' }}&deg;C</span>
-			</li>
-
-			<li *ngIf="weather?.clouds.all > 80">It's very cloudy. <span>{{weather?.clouds.all || '...' }}%</span> of the sky is covered.</li>
-			<li *ngIf="weather?.clouds.all <= 80 && weather?.clouds.all > 30">The sky is covered with clouds in <span>{{weather?.clouds.all || '...' }}%</span></li>
-			<li *ngIf="weather?.clouds.all > 0 && weather?.clouds.all <= 30">There are hardly any clouds about - just <span>{{weather?.clouds.all || '...' }}%</span></li>
-			<li *ngIf="weather?.clouds.all == 0">There is not a single cloud to be seen.</li>
-
-			<li *ngIf="weather?.main.humidity > 90">It is steamy! Humidity <span>{{weather?.main.humidity || '...' }}%</span>!</li>
-			<li *ngIf="weather?.main.humidity <= 90 && weather?.main.humidity > 30">It is pretty humid - <span>{{weather?.main.humidity || '...' }}%</span></li>
-			<li *ngIf="weather?.main.humidity <= 30">It's very dry! The humidity is just  <span>{{weather?.main.humidity || '...' }}%</span></li>
-
-			<li *ngIf="weather?.wind.speed > 20">It is howling! Wind speeds will reach <span>{{(weather?.wind.speed | number:'1.0-1') || '...' }} m/s</span>!</li>
-			<li *ngIf="weather?.wind.speed <= 20 && weather?.wind.speed > 5">It is quite windy, around <span>{{(weather?.wind.speed | number:'1.0-1') || '...' }} m/s</span></li>
-			<li *ngIf="weather?.wind.speed <= 5">The wind is calm, just <span>{{(weather?.wind.speed | number:'1.0-1') || '...' }} m/s</span></li>
-			
-		</ul>
-	</aside>
-
-</section>
+		<section>
+			<p>
+				Flights range from <span>{{(flights?.min | number:'1.0-0') || '...'}}€</span> 
+				to <span>{{(flights?.max  | number:'1.0-0') || '...'}}€</span>
+				with average cost of <span>{{(flights?.average  | number:'1.2-2') || '...'}}€</span>,
+				or <span>{{(flights?.unit*100  | number:'1.2-2') || '...'}}€</span> per 100km.
+			</p>
+		</section>
+		
+		<section>
+			<ul>
+				<li>Temperatures are between 
+					<span>{{(weather?.main.temp_min | number:'1.0-1') || '...' }}&deg;C</span> 
+					and <span>{{(weather?.main.temp_max | number:'1.0-1') || '...' }}&deg;C</span>,
+					but on average, it feels like <span>{{(weather?.main.feels_like | number:'1.0-1') || '...' }}&deg;C</span>
+				</li>
+	
+				<li *ngIf="weather?.clouds.all > 80">It's very cloudy. <span>{{weather?.clouds.all || '...' }}%</span> of the sky is covered.</li>
+				<li *ngIf="weather?.clouds.all <= 80 && weather?.clouds.all > 30">The sky is covered with clouds in <span>{{weather?.clouds.all || '...' }}%</span></li>
+				<li *ngIf="weather?.clouds.all > 0 && weather?.clouds.all <= 30">There are hardly any clouds about - just <span>{{weather?.clouds.all || '...' }}%</span></li>
+				<li *ngIf="weather?.clouds.all == 0">There is not a single cloud to be seen.</li>
+	
+				<li *ngIf="weather?.main.humidity > 90">It is steamy! Humidity <span>{{weather?.main.humidity || '...' }}%</span>!</li>
+				<li *ngIf="weather?.main.humidity <= 90 && weather?.main.humidity > 30">It is pretty humid - <span>{{weather?.main.humidity || '...' }}%</span></li>
+				<li *ngIf="weather?.main.humidity <= 30">It's very dry! The humidity is just  <span>{{weather?.main.humidity || '...' }}%</span></li>
+	
+				<li *ngIf="weather?.wind.speed > 20">It is howling! Wind speeds will reach <span>{{(weather?.wind.speed | number:'1.0-1') || '...' }} m/s</span>!</li>
+				<li *ngIf="weather?.wind.speed <= 20 && weather?.wind.speed > 5">It is quite windy, around <span>{{(weather?.wind.speed | number:'1.0-1') || '...' }} m/s</span></li>
+				<li *ngIf="weather?.wind.speed <= 5">The wind is calm, just <span>{{(weather?.wind.speed | number:'1.0-1') || '...' }} m/s</span></li>
+				
+			</ul>
+		</section>
+	</article>
+</div>
