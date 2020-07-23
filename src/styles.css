@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+html, body, .container-fluid, app-root {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.content-wrapper {
+	flex: 1 0 auto;
+	background:  #f3f6f9;
+}
+
+.footer-wrapper {
+	flex-shrink: 0;
+}

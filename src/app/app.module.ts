@@ -6,6 +6,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { PlaceListComponent } from './place-list/place-list.component';
 import { PlaceComponent } from './place/place.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
 	declarations: [
@@ -16,7 +17,8 @@ import { PlaceComponent } from './place/place.component';
 		PlaceComponent
 	],
 	imports: [
-		BrowserModule
+		BrowserModule,
+		HttpClientModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent]
