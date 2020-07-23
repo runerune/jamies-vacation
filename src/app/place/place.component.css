@@ -9,10 +9,39 @@ li, ul {
 	list-style: none;
 }
 
+ul {
+	margin: 1rem 0;
+}
+
+ul.separated:after {
+	content: '';
+	width: .4rem;
+	height: .4rem;
+	background: #ccc;
+	display: block;
+	margin: 1rem auto 0;
+	border-radius: 5rem;
+}
+
+li {
+	margin-bottom: .4rem;
+}
+
 img {
 	display: inline-block;
 	width: 3rem;
 	height: 3rem;
 	vertical-align: top;
 	margin-top: -.2rem;
+	filter: invert(100%);
+}
+
+.card {
+	margin-bottom: 2rem;
+}
+
+strong {
+	font-weight: 400;
+	background-color: #fff8e0;
+	padding: 0 .2rem;
 }
