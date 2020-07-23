@@ -38,5 +38,8 @@ header h1 {
 	header .lead {
 		margin: -1.5rem 0 0;
 		line-height: 3rem;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
 	}
 }
