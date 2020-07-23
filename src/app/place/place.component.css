@@ -29,15 +29,17 @@ li {
 
 img {
 	display: inline-block;
-	width: 3rem;
-	height: 3rem;
+	width: 3.5rem;
+	height: 3.5rem;
 	vertical-align: top;
-	margin-top: -.2rem;
-	filter: invert(100%);
+	margin-top: -.5rem;
+	filter: brightness(.9);
 }
 
 .card {
 	margin-bottom: 2rem;
+	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,.7) 100%);
+	box-shadow: 0 .5rem .5rem rgba(128,128,128,.1);
 }
 
 strong {
