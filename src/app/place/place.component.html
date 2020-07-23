@@ -7,31 +7,33 @@
 				alt=" - weather: {{weather?.weather[0].main || '...'}}"
 				title="{{weather?.weather[0].main || '...'}}"
 			>
+			<span class="weather-main">{{(weather?.main.temp | number:'1.0-1') || '...' }}&deg;</span>
 		</h2>
 	
 		<section>
 			<ul class="separated">
 				<li>
-					Flights range from <span>{{(flights?.min | number:'1.0-0') || '...'}}€</span> 
-					to <span>{{(flights?.max  | number:'1.0-0') || '...'}}€</span>.
+					Flights range from <span>{{(flights?.min | number:'1.0-0') || '...'}}<small>€</small></span> 
+					to <span>{{(flights?.max  | number:'1.0-0') || '...'}}<small>€</small></span>.
 				</li>
 				<li>
-					On average, it costs <span>{{(flights?.average  | number:'1.2-2') || '...'}}€</span>,
-					or <strong><span>{{flights?.min && (flights?.unit*100  | number:'1.2-2') || '...'}}€</span> per 100km</strong>.
+					On average, it is  <strong><span>{{flights?.min && (flights?.unit*100  | number:'1.2-2') || '...'}}<small>€</small></span> per 100km</strong>.
 				</li>
 			</ul>
 		</section>
 		
 		<section>
-			<ul>
+			<ul class="separated secondary">
 				<li>Temperatures today are between 
-					<span>{{(weather?.main.temp_min | number:'1.0-1') || '...' }}&deg;C</span> 
-					and <span>{{(weather?.main.temp_max | number:'1.0-1') || '...' }}&deg;C</span>.
+					<span>{{(weather?.main.temp_min | number:'1.0-1') || '...' }}&deg;</span> 
+					and <span>{{(weather?.main.temp_max | number:'1.0-1') || '...' }}&deg;</span>.
 				</li>
-				<li>Average temperature is  <span>{{(weather?.main.temp | number:'1.0-1') || '...' }}&deg;C</span> 
-					but it <strong>feels like <span>{{(weather?.main.feels_like | number:'1.0-1') || '...' }}&deg;C</span></strong>.
+				<li>
+					On average, it <strong>feels like <span>{{(weather?.main.feels_like | number:'1.0-1') || '...' }}&deg;</span></strong> outside.
 				</li>
-	
+			</ul>
+
+			<ul class="tertiary">
 				<li *ngIf="weather?.clouds.all > 80">
 					It's <strong>very cloudy</strong>. <span>{{weather?.clouds.all || '...' }}%</span> of the sky is covered.
 				</li>

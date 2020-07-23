@@ -15,12 +15,11 @@ ul {
 
 ul.separated:after {
 	content: '';
-	width: .4rem;
-	height: .4rem;
-	background: #ccc;
+	width: 80%;
+	height: 0;
 	display: block;
 	margin: 1rem auto 0;
-	border-radius: 5rem;
+	border-bottom: .05rem solid #eee;
 }
 
 li {
@@ -40,10 +39,26 @@ img {
 	margin-bottom: 2rem;
 	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,.7) 100%);
 	box-shadow: 0 .5rem .5rem rgba(128,128,128,.1);
+	font-size: 1.1rem;
 }
 
 strong {
 	font-weight: 400;
 	background-color: #fff8e0;
 	padding: 0 .2rem;
+}
+
+.secondary {
+	font-size: 1rem;
+}
+
+.tertiary {
+	font-size: .9rem;
+	color: #666;
+}
+
+.weather-main {
+	color: #0abf53;
+	font-size: 1.2rem;
+	float: right;
 }
