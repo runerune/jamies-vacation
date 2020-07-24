@@ -22,8 +22,6 @@ export class PlaceComponent implements OnInit {
 	) { }
 
 	ngOnInit(): void {
-		console.log(this.city);
-
 		this.weatherService.getFor(this.city.name).subscribe(result => {
 			this.weather = result;
 		})
@@ -53,8 +51,6 @@ export class PlaceComponent implements OnInit {
 				min: minPrice,
 				unit: totalPrice/totalDistance,
 			};
-
-			console.log(this.flights);
 		})
 	}
 
