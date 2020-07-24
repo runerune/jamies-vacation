@@ -18,11 +18,13 @@ header .lead {
 header h1 {
 	color: #0abf53;
 	line-height: 4rem;
+	margin-left: 1rem;
 }
 
 @media (max-width: 600px) {
 	header h1 {
 		line-height: 3.5rem;
+		margin-left: 0;
 	}
 
 	header h1,
