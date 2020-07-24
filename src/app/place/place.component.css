@@ -32,7 +32,7 @@ img {
 	height: 3.5rem;
 	vertical-align: top;
 	margin-top: -.5rem;
-	filter: brightness(.9);
+	filter: brightness(.95);
 }
 
 .card {
@@ -46,6 +46,17 @@ strong {
 	font-weight: 400;
 	background-color: #fff8e0;
 	padding: 0 .2rem;
+}
+
+figure {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 12rem;
+}
+
+figure img {
+	visibility: hidden;
 }
 
 .secondary {

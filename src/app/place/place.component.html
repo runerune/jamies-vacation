@@ -1,14 +1,22 @@
 <div class="card">
 	<article class="card-body">
-		<h2 class="card-title">
-			<span>{{city.name}}</span>
-			<img 
-				src="https://openweathermap.org/img/wn/{{weather?.weather[0].icon}}@2x.png"
-				alt=" - weather: {{weather?.weather[0].main || '...'}}"
-				title="{{weather?.weather[0].main || '...'}}"
-			>
-			<span class="weather-main">{{(weather?.main.temp | number:'1.0-1') || '...' }}&deg;</span>
-		</h2>
+		<header>
+			<h2 class="card-title">
+				<span>{{city.name}}</span>
+				<img 
+					src="https://openweathermap.org/img/wn/{{weather?.weather[0].icon}}@2x.png"
+					alt=" - weather: {{weather?.weather[0].main || '...'}}"
+					title="{{weather?.weather[0].main || '...'}}"
+				>
+				<span class="weather-main">{{(weather?.main.temp | number:'1.0-1') || '...' }}&deg;</span>
+			</h2>
+		</header>
+
+		<section>
+			<figure style="background-image: url(/assets/{{city.image.name}})">
+				<img src="/assets/{{city.image.name}}" alt="{{city.image.caption}}">
+			</figure>
+		</section>
 	
 		<section>
 			<ul class="separated">
