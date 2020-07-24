@@ -48,6 +48,8 @@ figure {
 
 figure img {
 	visibility: hidden;
+	width: 0;
+	height: 0;
 }
 
 .secondary {
