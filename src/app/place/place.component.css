@@ -45,6 +45,7 @@ figure {
 	background-position: center;
 	height: 12rem;
 	position: relative;
+	margin: 1.5rem 0;
 }
 
 figure img {
