@@ -44,12 +44,30 @@ figure {
 	background-repeat: no-repeat;
 	background-position: center;
 	height: 12rem;
+	position: relative;
 }
 
 figure img {
 	visibility: hidden;
 	width: 0;
 	height: 0;
+}
+
+figure figcaption {
+	background: #fff;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	font-size: .9rem;
+	font-weight: bold;
+	padding: 0 .3rem;
+	opacity: .5;
+	transition: .5s opacity;
+}
+
+figure:hover figcaption {
+	opacity: 1;
+	transition: .2s opacity;
 }
 
 .secondary {
