@@ -59,10 +59,10 @@
 				<li *ngIf="weather?.main.humidity > 90">
 					It is <strong>steamy!</strong> Humidity <span>{{weather?.main.humidity || '...' }}%</span>!
 				</li>
-				<li *ngIf="weather?.main.humidity <= 90 && weather?.main.humidity > 30">
+				<li *ngIf="weather?.main.humidity <= 90 && weather?.main.humidity > 40">
 					It is <strong>pretty humid</strong> - <span>{{weather?.main.humidity || '...' }}%</span>.
 				</li>
-				<li *ngIf="weather?.main.humidity <= 30">
+				<li *ngIf="weather?.main.humidity <= 40">
 					It's <strong>very dry!</strong> The humidity is just  <span>{{weather?.main.humidity || '...' }}%</span>.
 				</li>
 	
